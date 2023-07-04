@@ -17,7 +17,7 @@ public class OrFilter implements Filter {
         final String OR = " OR ";
         builder.append(" (");
 
-        filters.forEach(filter -> builder.append(filter.getFilterQuery()).append(OR));
+        filters.forEach(filter -> builder.append("(").append(filter.getFilterQuery()).append(")").append(OR));
         builder.delete(builder.length() - OR.length(), builder.length());
 
         builder.append(") ");
